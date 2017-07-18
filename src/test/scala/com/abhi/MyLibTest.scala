@@ -21,7 +21,7 @@ class MyLibTest extends FunSpec with Matchers{
       it("should use mock module") {
          val lib = new MyLibrary()
          val mock = spy(lib)
-         doReturn(Response(10, "mock"), Array.empty:_*).when(mock.doFoo(any(), any()))
+         doReturn(Response(10, "mock"), Array.empty:_*).when(mock).doFoo(any(), any())
          val response = mock.doFoo(1, Request("bar"))
          response.name should equal("mock")
       }
